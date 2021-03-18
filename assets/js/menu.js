@@ -10,9 +10,3 @@ const submenu = document.getElementById("sub-menu");
 enlaseSubmenu.addEventListener("click", () => {
   submenu.classList.toggle("menu__subMenu--subMenu-open");
 });
-
-const initSecion = document.getElementById("initSecion");
-const modalInitSecion = document.getElementById("modalInitSecion");
-initSecion.addEventListener("click", () => {
-  modalInitSecion.classList.toggle("modalSccion--openModal");
-});

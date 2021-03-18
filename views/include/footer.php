@@ -18,6 +18,9 @@
         </div>
       </section>
 </footer>
+<script>
+const base_url = "<?= base_url();?>";
+</script>
 <script src="<?= base_url(); ?>assets/js/menu.js"></script>
 <script src="<?= base_url(); ?>assets/js/slider.js"></script>
 <script src="<?= base_url(); ?>assets/js/calendario.js"></script>
