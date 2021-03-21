@@ -110,7 +110,6 @@
     width: 60%;
     height: 3.125rem;
     display: inline-flex;
-
     transform: translateX(0);
     background: none;
     box-shadow: none;
@@ -129,9 +128,10 @@
   }
   &__enlace {
     position: relative;
+    height: 3.125rem;
+    @include display;
     @media screen and (min-width: 768px) {
       margin-right: 0.3125rem;
-      @include display;
     }
     @media screen and (min-width: 1500px) {
       margin-right: 0.625rem;
@@ -143,9 +143,9 @@
   }
   &__link {
     padding: 0.625rem;
-    width: 100%;
+    @include tamaño(100%, 3.125rem);
     color: #333;
-    display: block;
+    @include display;
     text-align: center;
     text-decoration: none;
     font-size: 1rem;
@@ -153,13 +153,17 @@
       color: #7a7a7a;
       transition: color 0.3s;
     }
+    &:hover + .menu__subMenu {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   &__subMenu {
     border-radius: 0.625rem;
     position: absolute;
     background: #fbf9ff;
     width: 100%;
-    top: 40px;
+    top: 44px;
     z-index: 10;
     opacity: 0;
     transform: scale(0);
@@ -169,10 +173,6 @@
       width: 12.5rem;
       margin-top: 0.4375rem;
     }
-    // &--subMenu-open {
-    //   opacity: 1;
-    //   transform: scale(1);
-    // }
   }
   &__submenu-ul {
     width: 100%;
