@@ -1,5 +1,5 @@
 .con_footer {
-  @include tamaño(100%,100%);
+  @include tamaño(100%, 100%);
   background: #fbf9ff;
   @include display;
   flex-direction: column;
@@ -13,13 +13,13 @@
     }
   }
   &__con_icon {
-    @include tamaño(100%,3.125rem);
+    @include tamaño(100%, 3.125rem);
     @include display;
     margin: 0 auto;
   }
   &__redess {
     color: #000;
-    @include tamaño(2.1875rem,2.1875rem);
+    @include tamaño(2.1875rem, 2.1875rem);
     @include display;
     text-decoration: none;
     margin: 0.625rem;

@@ -16,7 +16,7 @@
     }
   }
   &__img {
-  @include tamaño(3.125rem, 3.125rem);
+    @include tamaño(3.125rem, 3.125rem);
   }
   &__con-titel {
     width: calc(100% - 3.125rem);
@@ -38,7 +38,6 @@
       color: #7a7a7a;
       transition: color 0.3s;
     }
-    
   }
   &__inicioSeccion {
     @include tamaño(3.125rem, 100%);
@@ -116,9 +115,7 @@
     background: none;
     box-shadow: none;
   }
-  // @media screen and (min-width: 1500px) {
-  //   font-size: 25px;
-  // }
+
   &__ul {
     width: 100%;
     list-style: none;
@@ -132,12 +129,16 @@
   }
   &__enlace {
     position: relative;
-
     @media screen and (min-width: 768px) {
       margin-right: 0.3125rem;
+      @include display;
     }
     @media screen and (min-width: 1500px) {
       margin-right: 0.625rem;
+    }
+    &:hover > .menu__subMenu {
+      opacity: 1;
+      transform: scale(1);
     }
   }
   &__link {
@@ -152,18 +153,13 @@
       color: #7a7a7a;
       transition: color 0.3s;
     }
-    // @media screen and (min-width: 1400px) {
-    //   font-size: 1.3rem;
-    // }
-    // @media screen and (min-width: 2000px) {
-    //   font-size: 2.3rem;
-    // }
   }
   &__subMenu {
     border-radius: 0.625rem;
     position: absolute;
     background: #fbf9ff;
     width: 100%;
+    top: 40px;
     z-index: 10;
     opacity: 0;
     transform: scale(0);
@@ -173,10 +169,10 @@
       width: 12.5rem;
       margin-top: 0.4375rem;
     }
-    &--subMenu-open {
-      opacity: 1;
-      transform: scale(1);
-    }
+    // &--subMenu-open {
+    //   opacity: 1;
+    //   transform: scale(1);
+    // }
   }
   &__submenu-ul {
     width: 100%;

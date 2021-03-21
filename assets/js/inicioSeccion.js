@@ -134,11 +134,9 @@ inputsRegistro.forEach((input) => {
 formContenInicio.addEventListener("submit", (e) => {
   e.preventDefault();
   if (canpos.usuario && canpos.clave) {
-    let request = window.XMLHttpRequest
-      ? new XMLHttpRequest()
-      : new ActiveXObject("Microsoft.XMLHTTP");
+    let request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     let ajaxUrl = base_url + "/Login/loginUser";
-    let formData = new FormData(formulario);
+    let formData = new FormData(formContenInicio);
     request.open("POST", ajaxUrl, true);
     request.send(formData);
     console.log(request);

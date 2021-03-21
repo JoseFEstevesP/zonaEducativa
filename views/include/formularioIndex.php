@@ -11,7 +11,7 @@
         </div>
           <form action="#" class="formConten" id="formContenInicio" name="forminicio">
           <label for="user" class="formConten__label">Usuario:</label>
-          <div class="formConten__contIimput usuarioCon" >
+          <div class="formConten__contIimput usuarioCon">
             <span class="formConten__iconConten">
               <i class="fas fa-user-circle"></i>
             </span>
