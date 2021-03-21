@@ -1,3 +1,6 @@
+.footer {
+  margin-top: auto;
+}
 .con_footer {
   @include tamaño(100%, 100%);
   background: #fbf9ff;
@@ -53,10 +56,10 @@
     i {
       font-size: 1.5625rem;
     }
-    @media screen and (min-width: 2000px) {
-      width: 90px;
-      height: 90px;
-    }
+    // @media screen and (min-width: 2000px) {
+    //   width: 5.625rem;
+    //   height: 5.625rem;
+    // }
   }
   &__con_info {
     @include display;
