@@ -10,5 +10,11 @@ class Roles extends Controllers
     $data['titulo'] = "Roles"; 
     $this->Views->getView($this,"roles", $data);
   }
+  public function getRoles()
+  {
+    $arrData = $this->model->selectRoles();
+    echo json_encode($arrData,JSON_UNESCAPED_UNICODE);
+    die();
+  } 
 }
  ?>
