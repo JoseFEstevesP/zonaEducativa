@@ -60,7 +60,7 @@
               <input type="text"id="nom"class="formConten__input"placeholder="Nombre..."name="nombre"/>
               <div class="infoContenforInput">
                 <p class="infoContenforInput__p">
-                  El nombre debe de contener letras y espacios
+                  El nombre no se conpone de numeros y caracteres especiales
                 </p>
               </div>
             </div>

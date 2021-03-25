@@ -1,7 +1,14 @@
+const initSecion = document.getElementById("initSecion");
+const formulario = document.getElementById("formulario");
+initSecion.addEventListener("click", () => {
+  formulario.classList.toggle("formulario--openModal");
+  body.classList.toggle("modalOpenBody");
+});
 const formularioConten = document.querySelectorAll(".formulario__Conteform");
 const formularioEnlace = document.querySelectorAll(".formulario__enlace");
 const formContenPrincipal = document.getElementById("formContenPrincipal");
 const formularioContenPrincipal = document.getElementById("formulario");
+
 formularioEnlace.forEach((iten) => {
   iten.addEventListener("click", () => {
     formContenPrincipal.classList.toggle("formulario__conten--registroContenT");
@@ -15,6 +22,7 @@ formularioEnlace.forEach((iten) => {
 const closeInicio = document.getElementById("closeInicio");
 closeInicio.addEventListener("click", () => {
   formularioContenPrincipal.classList.toggle("formulario--openModal");
+  body.classList.toggle("modalOpenBody");
 });
 // para ver la pasword
 const passInicio = document.getElementById("passInicio");
@@ -134,7 +142,9 @@ inputsRegistro.forEach((input) => {
 formContenInicio.addEventListener("submit", (e) => {
   e.preventDefault();
   if (canpos.usuario && canpos.clave) {
-    let request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    let request = window.XMLHttpRequest
+      ? new XMLHttpRequest()
+      : new ActiveXObject("Microsoft.XMLHTTP");
     let ajaxUrl = base_url + "/Login/loginUser";
     let formData = new FormData(formContenInicio);
     request.open("POST", ajaxUrl, true);
@@ -160,9 +170,4 @@ formContenRegisto.addEventListener("submit", (e) => {
     infoTextRegistro.innerHTML =
       "<b>Error:</b> Todos los campos son abligatorios";
   }
-});
-const initSecion = document.getElementById("initSecion");
-const formulario = document.getElementById("formulario");
-initSecion.addEventListener("click", () => {
-  formulario.classList.toggle("formulario--openModal");
 });

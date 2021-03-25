@@ -1,5 +1,5 @@
 <?php 
-class rolesModel extends Mysql
+class RolesModel extends Mysql
 {
   public function __construct()
     {
@@ -7,7 +7,7 @@ class rolesModel extends Mysql
     }
   public function selectRoles()
   {
-    $sql = "SELECT * FROM rol WHERE status != 0";
+    $sql = "SELECT * FROM rol ";
     $request= $this->selectAll($sql);
     return $request;
   }

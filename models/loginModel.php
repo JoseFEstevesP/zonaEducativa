@@ -1,6 +1,6 @@
 <?php 
 
-class loginModel extends Mysql
+class LoginModel extends Mysql
 {
   private $intIdUsuario;
   private $strUsuario;

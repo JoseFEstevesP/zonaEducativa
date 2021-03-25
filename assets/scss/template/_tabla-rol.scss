@@ -1,5 +1,31 @@
 .tabla {
+  position: relative;
   @include tamaño;
+  &__btn-add {
+    position: absolute;
+    top: 0;
+    left: 0.3125rem;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem;
+    border: 0.125rem solid rgb(40, 40, 255);
+    box-shadow: 0 0 0.1875rem 0 rgb(80, 80, 255);
+    border-radius: 0.3125rem;
+    font-weight: bold;
+    @media screen and (min-width: 768px) {
+      left: 10%;
+    }
+    &:hover {
+      border: 0.125rem solid rgb(80, 80, 255);
+      box-shadow: 0 0 0.1875rem 0 rgb(40, 40, 255);
+      transform: scale(1.02);
+      & > .fa-plus {
+        transform: rotate(360deg);
+        transition: transform 0.3s;
+      }
+    }
+  }
   &__table {
     background: #fff;
     color: #000;
@@ -43,35 +69,19 @@
     &--inactivo {
       color: #ff3b3b;
     }
+
     &:hover > .tabla__mensaje {
       transition-delay: 0.5s;
       opacity: 1;
       transform: scale(1);
     }
   }
-  &__mensaje {
-    position: absolute;
-    background: #ecebff;
-    top: -2rem;
-    @include tamaño(5rem, 1.25rem);
-    @include display;
-    border-radius: 0.3125rem;
-    color: #000;
-    opacity: 0;
-    transform: scale(0);
-    transition: transform 0.3s, opacity 0.3s;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 1.25rem;
-      border: 0.5rem solid transparent;
-      border-top: 0.5rem solid #ecebff;
-    }
-  }
+
   &__mensajeP {
     font-weight: bold;
   }
   &__btn-action {
+    position: relative;
     padding: 0.3rem;
     font-size: 1.2rem;
     text-decoration: none;
@@ -83,6 +93,13 @@
     @media screen and (min-width: 768px) {
       display: inline-flex;
       margin: 0 auto;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      @include tamaño;
+      top: 0;
+      left: 0;
     }
     &--update {
       border: 0.125rem solid #3e3ef7;
@@ -99,6 +116,15 @@
       &:hover {
         box-shadow: 0 0 0.25rem 0 #ff4f4f;
         border: 0.125rem solid #ff4f4f;
+        transform: scale(1.02);
+      }
+    }
+    &--roltarea {
+      border: 0.125rem solid #838383;
+      box-shadow: 0 0 0.125rem 0 #838383;
+      &:hover {
+        box-shadow: 0 0 0.25rem 0 #a0a0a0;
+        border: 0.125rem solid #a0a0a0;
         transform: scale(1.02);
       }
     }

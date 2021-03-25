@@ -20,7 +20,6 @@
     border-radius: 0.3125rem;
     box-shadow: 0 0 0.1875rem #333;
     @include display;
-
     flex-direction: column;
     color: #333;
     border-bottom: 0.0625rem solid #ff3232;
@@ -39,13 +38,15 @@
     width: 100%;
     margin: auto;
     @include display;
-
     flex-direction: column;
     transform: scale(1);
     transition: all 0.3s;
     &--activo {
       transform: scale(0);
       opacity: 0;
+    }
+    &--modiRol {
+      bottom: 1.25rem;
     }
   }
   &__titulo,
@@ -153,6 +154,11 @@
     &:hover {
       color: #000;
     }
+  }
+  &__option {
+    width: 90%;
+    color: #333;
+    font-weight: bold;
   }
 }
 

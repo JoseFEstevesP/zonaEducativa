@@ -21,11 +21,11 @@
 <script>
 const base_url = "<?= base_url();?>";
 </script>
+<script src="<?= base_url(); ?>assets/js/funciones.js"></script>
 <script src="<?= base_url(); ?>assets/js/menu.js"></script>
 <script src="<?= base_url(); ?>assets/js/slider.js"></script>
 <script src="<?= base_url(); ?>assets/js/calendario.js"></script>
 <script src="<?= base_url(); ?>assets/js/inicioSeccion.js"></script>
-<script src="<?= base_url(); ?>assets/js/registro.js"></script>
 <script src="<?= base_url(); ?>assets/js/roles.js"></script>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
