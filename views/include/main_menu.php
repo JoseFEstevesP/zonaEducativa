@@ -2,7 +2,6 @@
 	<div class="main_menu__con_tc">
 		<div class="main_menu__inicioSeccion " id="initSecion">
 			<i class="fas fa-user-circle"></i>
-			<!-- main_menu__inicioSeccion--sectionActive -->
 		</div>
 		<div class="main_menu__con-titel">
 			<a href="<?= base_url(); ?>" class="main_menu__titel">Z.E.D.C</a>
