@@ -1,0 +1,132 @@
+.tabla {
+  position: relative;
+  @include tamaño;
+  &__btn-add {
+    position: absolute;
+    top: 0;
+    left: 0.3125rem;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem;
+    border: 0.125rem solid rgb(40, 40, 255);
+    box-shadow: 0 0 0.1875rem 0 rgb(80, 80, 255);
+    border-radius: 0.3125rem;
+    font-weight: bold;
+    @media screen and (min-width: 768px) {
+      left: 10%;
+    }
+    &:hover {
+      border: 0.125rem solid rgb(80, 80, 255);
+      box-shadow: 0 0 0.1875rem 0 rgb(40, 40, 255);
+      transform: scale(1.02);
+      & > .fa-plus {
+        transform: rotate(360deg);
+        transition: transform 0.3s;
+      }
+    }
+  }
+  &__table {
+    background: #fff;
+    color: #000;
+    width: 100%;
+    border: 0.125rem solid #333;
+    font-family: sans-serif;
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: 768px) {
+      width: 80%;
+    }
+  }
+  &__titulo {
+    margin-top: 0;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__th,
+  &__td {
+    font-size: 1rem;
+    border: 0.125rem solid #333;
+    padding: 0.5rem;
+    color: #000;
+    transition: color 0.3s;
+    &:hover {
+      color: #545454;
+    }
+  }
+  &__status {
+    font-size: 0.9rem;
+    border-radius: 50%;
+    position: relative;
+    @include display;
+    &--activo {
+      color: #00ff00;
+    }
+    &--inactivo {
+      color: #ff3b3b;
+    }
+
+    &:hover > .tabla__mensaje {
+      transition-delay: 0.5s;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__mensajeP {
+    font-weight: bold;
+  }
+  &__btn-action {
+    position: relative;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #333;
+    border-radius: 0.3125rem;
+    margin: 0.3125rem auto;
+    @include display;
+    border: 0.125rem solid transparent;
+    @media screen and (min-width: 768px) {
+      display: inline-flex;
+      margin: 0 auto;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      @include tamaño;
+      top: 0;
+      left: 0;
+    }
+    &--update {
+      border: 0.125rem solid #3e3ef7;
+      box-shadow: 0 0 0.125rem 0 #3e3ef7;
+      &:hover {
+        box-shadow: 0 0 0.25rem 0 #4d4dfc;
+        border: 0.125rem solid #4d4dfc;
+        transform: scale(1.02);
+      }
+    }
+    &--delete {
+      border: 0.125rem solid #ff3b3b;
+      box-shadow: 0 0 0.125rem 0 #ff3b3b;
+      &:hover {
+        box-shadow: 0 0 0.25rem 0 #ff4f4f;
+        border: 0.125rem solid #ff4f4f;
+        transform: scale(1.02);
+      }
+    }
+    &--roltarea {
+      border: 0.125rem solid #838383;
+      box-shadow: 0 0 0.125rem 0 #838383;
+      &:hover {
+        box-shadow: 0 0 0.25rem 0 #a0a0a0;
+        border: 0.125rem solid #a0a0a0;
+        transform: scale(1.02);
+      }
+    }
+  }
+}
