@@ -50,3 +50,75 @@ dataRoles.onreadystatechange = () => {
     });
   }
 };
+// ==========================================================
+const forRoles = document.getElementById("forRoles");
+const forRolesInput = document.querySelectorAll("#forRoles input");
+
+const expresionesRol = {
+  rol: /^[a-zA-Z0-9\_\-]{4,16}$/,
+  descripcion: /^[a-zA-ZÁ-ÿ\s]{4,40}$/,
+};
+let canposRol = {
+  rol: false,
+  descripcion: false,
+};
+const validarFormuRol = (e) => {
+  switch (e.target.name) {
+    case "nombreRol":
+      validarCamposRol(
+        expresionesRol.rol,
+        e.target,
+        "rol",
+        e.target.offsetParent
+      );
+      break;
+    case "descripcionRol":
+      validarCamposRol(
+        expresionesRol.rol,
+        e.target,
+        "descripcion",
+        e.target.offsetParent
+      );
+      break;
+  }
+};
+const validarCamposRol = (expresion, input, canpo, conCampo) => {
+  if (expresion.test(input.value)) {
+    conCampo.classList.remove("formConten__contIimput--validatorInpud");
+    conCampo.classList.remove("formConten__iconConten--iconValidator");
+    conCampo
+      .querySelector(".infoContenforInput")
+      .classList.remove("infoContenforInput--leyenda_active");
+    canposRol[canpo] = true;
+  } else {
+    conCampo.classList.add("formConten__contIimput--validatorInpud");
+    conCampo.classList.add("formConten__iconConten--iconValidator");
+    conCampo
+      .querySelector(".infoContenforInput")
+      .classList.add("infoContenforInput--leyenda_active");
+    canposRol[canpo] = false;
+  }
+  if (input.value == "") {
+    conCampo.classList.remove("formConten__contIimput--validatorInpud");
+    conCampo.classList.remove("formConten__iconConten--iconValidator");
+    conCampo
+      .querySelector(".infoContenforInput")
+      .classList.remove("infoContenforInput--leyenda_active");
+    canposRol[canpo] = false;
+  }
+};
+const infoContenRol = document.getElementById("infoContenRol");
+const infoTextRol = document.getElementById("infoTextRol");
+forRolesInput.forEach((input) => {
+  input.addEventListener("keyup", validarFormuRol);
+  input.addEventListener("blur", validarFormuRol);
+});
+forRoles.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (canposRol.rol && canposRol.descripcion) {
+    console.log("correcto");
+  } else {
+    infoContenRol.classList.add("info--error");
+    infoTextRol.innerHTML = "<b>Error:</b> Todos los campos son abligatorios";
+  }
+});

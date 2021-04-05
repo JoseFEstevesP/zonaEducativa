@@ -44,6 +44,7 @@ body {
 }
 
 .closeModal {
+  z-index: 3;
   text-decoration: none;
   position: absolute;
   right: 0.3125rem;
