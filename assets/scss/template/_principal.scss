@@ -85,6 +85,11 @@ body {
     background: #fd3232;
     box-shadow: 0 0 0.3125rem #fd3232;
   }
+  &--correcto {
+    display: flex;
+    background: #41e941;
+    box-shadow: 0 0 0.3125rem #41e941;
+  }
   &__infoText {
     color: #000;
     text-align: center;

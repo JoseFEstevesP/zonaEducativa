@@ -48,7 +48,7 @@
           <span class="formConten__iconConten">
             <i class="fas fa-pen"></i>
           </span>
-          <select name="estado" id="estadoRol" class="formConten__input">
+          <select name="estadoRol" id="estadoRol" class="formConten__input">
             <option class="formConten__option" value="1">Activo</option>
             <option class="formConten__option" value="0">Inactivo</option>
           </select>

@@ -23,7 +23,7 @@ const fragmet = document.createDocumentFragment();
 const dataRoles = window.XMLHttpRequest
   ? new XMLHttpRequest()
   : new ActiveXObject("Micorsoft.XMLHTTP");
-dataRoles.open("GET", `${base_url}/roles/getRoles`, true);
+dataRoles.open("GET", `${base_url}/Roles/getRoles`, true);
 dataRoles.send();
 const poUpstatus = templateTableRol.querySelector(".statusRolPoUp");
 dataRoles.onreadystatechange = () => {
@@ -116,7 +116,28 @@ forRolesInput.forEach((input) => {
 forRoles.addEventListener("submit", (e) => {
   e.preventDefault();
   if (canposRol.rol && canposRol.descripcion) {
-    console.log("correcto");
+    const setRoles = window.XMLHttpRequest
+      ? new XMLHttpRequest()
+      : new ActiveXObject("Micorsoft.XMLHTTP");
+    const formdata = new FormData(forRoles);
+    setRoles.open("POST", `${base_url}/Roles/setRoles`, true);
+    setRoles.send(formdata);
+    setRoles.onreadystatechange = () => {
+      if (setRoles.readyState == 4 && setRoles.status == 200) {
+        const objData = JSON.parse(setRoles.responseText);
+        if (objData.status) {
+          infoContenRol.classList.add("info--correcto");
+          infoTextRol.textContent = objData.msg;
+          setTimeout(() => {
+            modal(modalNewRol, modalContent);
+          }, 1000);
+          // agregar el reseteo del formulario y el q se recarge la peticion ajax
+        } else {
+          infoContenRol.classList.add("info--error");
+          infoTextRol.textContent = objData.msg;
+        }
+      }
+    };
   } else {
     infoContenRol.classList.add("info--error");
     infoTextRol.innerHTML = "<b>Error:</b> Todos los campos son abligatorios";
