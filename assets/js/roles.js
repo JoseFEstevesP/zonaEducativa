@@ -24,12 +24,13 @@ const dataRoles = window.XMLHttpRequest
   ? new XMLHttpRequest()
   : new ActiveXObject("Micorsoft.XMLHTTP");
 dataRoles.open("GET", `${base_url}/Roles/getRoles`, true);
-dataRoles.send();
 const poUpstatus = templateTableRol.querySelector(".statusRolPoUp");
-dataRoles.onreadystatechange = () => {
+dataRoles.addEventListener("load", (data) => {
   if (dataRoles.readyState == 4 && dataRoles.status == 200) {
-    let dataJson = JSON.parse(dataRoles.responseText);
+    const dataJson = JSON.parse(data.target.response);
+    console.log(dataJson);
     dataJson.forEach((data) => {
+      console.log(data);
       if (data.status != 0) {
         poUpstatus.classList.add("tabla__status--activo");
         poUpstatus.setAttribute("title", "Activo");
@@ -49,7 +50,10 @@ dataRoles.onreadystatechange = () => {
       tableBody.appendChild(fragmet);
     });
   }
-};
+});
+dataRoles.send();
+
+// }
 // ==========================================================
 const forRoles = document.getElementById("forRoles");
 const forRolesInput = document.querySelectorAll("#forRoles input");
@@ -130,6 +134,8 @@ forRoles.addEventListener("submit", (e) => {
           infoTextRol.textContent = objData.msg;
           setTimeout(() => {
             modal(modalNewRol, modalContent);
+            forRoles.reset();
+            infoContenRol.classList.remove("info--correcto");
           }, 1000);
           // agregar el reseteo del formulario y el q se recarge la peticion ajax
         } else {
